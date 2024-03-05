@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CreatefotoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +33,9 @@ Route::post('register', [AuthController::class, 'registerProcess']);
 Route::middleware('auth')->group(function(){
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('create', [CreatefotoController::class, 'index'])->name('pages.createfoto');
+Route::get('home', [HomeController::class, 'index'])->name('home');
+
 });
 
 // Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
