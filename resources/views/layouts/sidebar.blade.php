@@ -1,16 +1,16 @@
 <ul class="navbar-nav sidebar sidebar-dark accordion" style="background-color:rgb(99, 140, 201);" id="accordionSidebar">
 
-<style> 
-li a:hover{
-    background-color: black;
-}
-</style>
+    <style>
+        li a:hover {
+            background-color: black;
+        }
+    </style>
 
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center">
         <div class="sidebar-brand-icon rotate-n-15">
-           
+
         </div>
         <div class="sidebar-brand-text mx-3">Galleryous</div>
     </a>
@@ -20,7 +20,7 @@ li a:hover{
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="{{route('dashboard')}}" >
+        <a class="nav-link" href="{{ route('dashboard') }}">
             <i class="bi bi-envelope-paper-heart-fill"></i>
             <span>Home</span>
         </a>
@@ -29,9 +29,23 @@ li a:hover{
         <a class="nav-link" href="{{route('dashboard')}}">
             <i class="bi bi-collection"></i>
             <span>Koleksi</span></a> --}}
+    <li class="nav-item active">
+        <a class="nav-link" href="{{ route('photo') }}">
+            <i class="bi bi-camera2"></i>
+            <span>Foto</span>
+        </a>
+    </li>
+
+    <li class="nav-item active">
+        <a class="nav-link" href="{{ route('dashboard') }}">
+            <i class="bi bi-postcard-heart"></i>
+            <span>Album</span>
+        </a>
+    </li>
+
     </li>
     <li class="nav-item active">
-        <a class="nav-link" href="{{route('logout')}}">
+        <a class="nav-link" href="{{ route('logout') }}">
             <i class="bi bi-box-arrow-left"></i>
             <span>Logout</span></a>
     </li>
@@ -45,4 +59,3 @@ li a:hover{
 
 
 </ul>
-

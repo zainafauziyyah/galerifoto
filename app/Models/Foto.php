@@ -8,14 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Foto extends Model
 {
     use HasFactory;
-
     protected $guarded = ['FotoID'];
-
+    
     protected $fillable = [
         'JudulFoto',
         'DeskripsiFoto',
         'TanggalUnggah',
         'LokasiFile',
+        'fotos'
     ];
 
     public function album()
