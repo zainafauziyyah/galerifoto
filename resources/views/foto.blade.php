@@ -10,7 +10,7 @@
                     <div class="card-body">
                         <!-- Tambahkan tampilan daftar foto di sini -->
                         <div class="row">
-                            @foreach ($photos as $photo)
+                            @foreach ($photo as $photo)
                                 <div class="col-md-4 mb-4">
                                     <div class="card">
                                         <img src="{{ $photo->url }}" class="card-img-top" alt="{{ $photo->title }}">

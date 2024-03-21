@@ -8,7 +8,6 @@
 <a id="create" href="{{route('pages.createfoto')}}">Upload Now!</a>
 
 
-
 <!-- Content Row -->
 
 <div class="row">

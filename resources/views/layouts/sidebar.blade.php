@@ -30,7 +30,7 @@
             <i class="bi bi-collection"></i>
             <span>Koleksi</span></a> --}}
     <li class="nav-item active">
-        <a class="nav-link" href="{{ route('photo') }}">
+        <a class="nav-link" href="/photo">
             <i class="bi bi-camera2"></i>
             <span>Foto</span>
         </a>
@@ -42,7 +42,7 @@
             <span>Album</span>
         </a>
     </li>
-
+    <hr class="sidebar-divider my-0">
     </li>
     <li class="nav-item active">
         <a class="nav-link" href="{{ route('logout') }}">

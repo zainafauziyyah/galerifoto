@@ -11,11 +11,10 @@ class Foto extends Model
     protected $guarded = ['FotoID'];
     
     protected $fillable = [
-        'JudulFoto',
-        'DeskripsiFoto',
-        'TanggalUnggah',
-        'LokasiFile',
-        'fotos'
+        'judul_foto',
+        'deskripsi_foto',
+        'tanggal_unggah',
+        'lokasi_file',
     ];
 
     public function album()

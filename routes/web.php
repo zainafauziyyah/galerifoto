@@ -42,9 +42,9 @@ Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard'
 Route::get('create', [CreatefotoController::class, 'index'])->name('pages.createfoto');
 Route::get('home', [HomeController::class, 'index'])->name('home');
 // foto
-Route::get('/photo', [PhotoController::class, 'index'])->name('photo');
+Route::get('/photo', [PhotoController::class, 'index'])->name('foto');
 
-Route::post('upload', [FotoController::class, 'upload'])->name('foto.upload');
+Route::post('fotoupload', [FotoController::class, 'upload'])->name('foto.upload');
 
 
 });
