@@ -5,40 +5,40 @@ namespace App\Http\Controllers;
 use App\Models\Foto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use App\Http\Controllers\Controller;
 
 class FotoController extends Controller
 {
-    public function index(){
-        return view('foto');
-    }
+    
     public function upload(Request $request)
 {
-    // Validasi input
-    $validatedData = $request->validate([
+    
+    $request->validate([
         'judul_foto' => 'required|string|max:255',
         'deskripsi_foto' => 'required|string',
-        'lokasi_file' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Menambahkan validasi untuk jenis file gambar dan maksimal ukuran file
+        'lokasi_file' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
     ]);
 
-    // Menghasilkan nama unik untuk gambar
-    $imageName = time() . '.' . $request->LokasiFile->extension();
+    if ($request->hasFile('lokasi_file')) {
+        $file = $request->file('lokasi_file');
 
-    $fotoDirectory = public_path() . '/foto';
-    $request->file('lokasi_file')->move($fotoDirectory, $imageName);
+        $filename = time() . '_' . $file->getClientOriginalName();
 
-    // Membuat instance Carbon untuk tanggal dan waktu saat ini
-    $validatedData['tanggal_unggah'] = Carbon::now();
+        $file->move(public_path('storage/foto'), $filename);
 
-    // Membuat catatan foto dalam database
-    Foto::create([
-        'judul_foto' => $validatedData['judul_foto'],
-        'deskripsi_foto' => $validatedData['deskripsi_foto'],
-        'lokasi_file' => $imageName,
-        'tanggal_unggah' => $validatedData['tanggal_unggah'],
-    ]);
+        $foto = new foto();
+        $foto->judul_foto = $request->judul_foto;
+        $foto->deskripsi_foto = $request->deskripsi_foto;
+        $foto->lokasi_file = $filename;
+        $foto->tanggal_unggah = now();
+        $foto->album_id = $album_id;
+        $foto->user_id = $user_id;
+        $foto->save();
 
-    // Redirect dengan pesan keberhasilan
-    return redirect()->route('pages.foto')->with('success', 'Foto berhasil diunggah.');
+
+    return response()->json(['message' => 'photo uploaded successfully', 'filename' => $filename]);
 }
-       
+    return response()->json(['message' => 'no photo uploaded'], 400);
+}
+
 }

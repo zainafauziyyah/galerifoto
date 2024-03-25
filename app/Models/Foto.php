@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Foto extends Model
 {
     use HasFactory;
-    protected $guarded = ['FotoID'];
-    
+    protected $guarded = ['fotoid'];
+    protected $table = 'foto';
     protected $fillable = [
         'judul_foto',
         'deskripsi_foto',
@@ -17,12 +17,12 @@ class Foto extends Model
         'lokasi_file',
     ];
 
-    public function album()
+    public function albums()
     {
         return $this->belongsToMany(Album::class);
     }
 
-    public function komentar()
+    public function komentarfoto()
     {
         return $this->belongsToMany(Komentar::class);
     }

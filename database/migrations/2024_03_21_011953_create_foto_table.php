@@ -19,10 +19,8 @@ class CreateFotoTable extends Migration
             $table->text('deskripsi_foto');
             $table->date('tanggal_unggah');
             $table->string('lokasi_file');
-            $table->unsignedBigInteger('album_id');
-            $table->foreign('album_id')->references('id')->on('album');
-            $table->unsignedBigInteger('users_id');
-            $table->foreign('users_id')->references('id')->on('users');
+            $table->foreignID('albums_id')->references('id')->on('albums');
+            $table->foreignID('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
