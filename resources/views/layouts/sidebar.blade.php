@@ -30,14 +30,14 @@
             <i class="bi bi-collection"></i>
             <span>Koleksi</span></a> --}}
     <li class="nav-item active">
-        <a class="nav-link" href="/photo">
+        <a class="nav-link" href="{{ route('foto') }}">
             <i class="bi bi-camera2"></i>
             <span>Foto</span>
         </a>
     </li>
 
     <li class="nav-item active">
-        <a class="nav-link" href="{{ route('dashboard') }}">
+        <a class="nav-link" href="{{ route('album') }}">
             <i class="bi bi-postcard-heart"></i>
             <span>Album</span>
         </a>

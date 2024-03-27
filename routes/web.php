@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FotoController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CreatefotoController;
@@ -44,7 +45,13 @@ Route::get('home', [HomeController::class, 'index'])->name('home');
 // foto
 // Route::get('/photo', [FotoController::class, 'index'])->name('foto');
 
-Route::post('/upload/foto', [FotoController::class, 'upload'])->name('upload.foto');
+Route::post('pages.foto', [FotoController::class, 'upload'])->name('pages.foto');
+Route::get('album', [AlbumController::class, 'hal'])->name('album');
+Route::get('createalbum', [AlbumController::class, 'index'])->name('createalbum');
+
+
+Route::get('foto', [PhotoController::class, 'index'])->name('foto');
+
 
 
 });

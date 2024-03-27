@@ -19,8 +19,8 @@ class CreateFotoTable extends Migration
             $table->text('deskripsi_foto');
             $table->date('tanggal_unggah');
             $table->string('lokasi_file');
-            $table->foreignID('albums_id')->references('id')->on('albums');
-            $table->foreignID('user_id')->references('id')->on('users');
+            $table->foreignID('album_id')->nullable()->constrained('album')->onDelete('set null');
+            $table->foreignID('user_id')->constrained('users');
             $table->timestamps();
         });
     }
