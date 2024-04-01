@@ -14,7 +14,6 @@ class FotoController extends Controller
     
     public function upload(Request $request)
     {
-        
         $request->validate([
             'judul_foto' => 'required|string|max:255',
             'deskripsi_foto' => 'required|string',
@@ -28,7 +27,7 @@ class FotoController extends Controller
     
             $file->move(public_path('storage/foto'), $filename);
     
-            $foto = new foto();
+            $foto = new Foto(); // Pastikan 'Foto' diawali dengan huruf kapital
             $foto->judul_foto = $request->judul_foto;
             $foto->deskripsi_foto = $request->deskripsi_foto;
             $foto->lokasi_file = $filename;
@@ -41,9 +40,7 @@ class FotoController extends Controller
             Session::flash('status', 'success');
             Session::flash('message', 'photo uploaded successfully');
             return redirect('foto');
-        // return response()->json(['message' => 'photo uploaded successfully', 'filename' => $filename]);
+        }
     }
-        // return response()->json(['message' => 'no photo uploaded'], 400);
-    }
-
-}
+    
+}    

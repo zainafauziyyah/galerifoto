@@ -31,7 +31,7 @@
     <button type="submit" class="btn btn-primary">Upload</button>
     <br>
 </form>
-
 </div>
-@endsection
 
+
+@endsection
