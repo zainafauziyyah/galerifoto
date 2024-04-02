@@ -10,29 +10,39 @@
         @endif
         <div class="isi d-flex">
             @foreach ($foto as $item)
-            <div class="card d-flex" style="width: 300px">
-                <img src="{{ asset('storage/foto/'.$item->lokasi_file)}}" alt="">
+            <div class="card d-flex">
+                <img src="{{ asset('storage/foto/'.$item->lokasi_file)}}" style="width:300px; height:300px" alt="">
+                {{-- <i class="bi bi-trash" style="margin-left:90%; margin-top:10px"></i> --}}
+                <form action="#" method="POST">
+                    {{-- <form action="{{ route('foto.destroy', $item->id) }}" method="POST"> --}}
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                </form>
                     <P>{{$item->judul_foto}}</P>
                     <P>{{$item->deskripsi_foto}}</P>
                     <P>{{$item->tanggal_unggah}}</P>
+                    <br>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$item->id}}">
             See Details
         </button>
         
 <!-- Modal -->
 <div class="modal fade" id="exampleModal{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg"> <!-- Tambahkan kelas modal-lg di sini -->
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Post</h5>
                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
             <div class="row g-0">
-                <div class="col-4">
+                <div class="col-6">
                     <img src="{{ asset('storage/foto/'.$item->lokasi_file)}}" class="foto-edit">
                 </div>
-                <div class="col-md-8">
+                {{-- <form action="" method="post">
+                    @csrf
+                <div class="col-md-5">
                     <div class="card">
                         <div class="chat-header">Comments</div>
                         <div class="chat-window">
@@ -40,10 +50,33 @@
                         </div>
                         <div class="chat-input">
                             <input type="text" class="message-input" placeholder="Type your message here">
-                            <button class="send-button">Send</button>
+                                @foreach ($komentar as $komentars)
+                                <li class="tag__name"><a  href="/profil">{{$komentars->user->username}}</a><br>{{$komentars->IsiKomentar}}</li><br>
+                                @endforeach
+                            <button type="submit" class="send-button">Send</button>
                         </div>
                     </div>
                 </div>
+                </form> --}}
+                {{-- <form action="{{ route('komentar.store') }}" method="post">
+                    @csrf --}}
+                    <div class="col-md-5">
+                        <div class="card">
+                            <div class="chat-header">Comments</div>
+                            <div class="chat-window">
+                                <ul class="message-list">
+                                    @foreach ($komentar as $komentars)
+                                        <li class="tag__name"><a href="/profil">{{ $komentars->user->username }}</a><br>{{ $komentars->IsiKomentar }}</li><br>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            <div class="chat-input">
+                                <input type="text" class="message-input" name="new_comment" placeholder="Type your message here">
+                                <button type="submit" class="send-button">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                {{-- </form> --}}
             </div>
             </div>
             <div class="modal-footer">

@@ -42,5 +42,17 @@ class FotoController extends Controller
             return redirect('foto');
         }
     }
+
+    public function destroy($id)
+    {
+        // Temukan foto berdasarkan ID
+        $foto = Foto::findOrFail($id);
+
+        // Hapus foto dari database
+        $foto->delete();
+
+        return redirect()->back()->with('success', 'photo is deleted');
+    }
+
     
 }    

@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KomentarController;
 use App\Http\Controllers\CreatefotoController;
 
 /*
@@ -42,20 +43,24 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('create', [CreatefotoController::class, 'index'])->name('pages.createfoto');
 Route::get('home', [HomeController::class, 'index'])->name('home');
-// foto
-// Route::get('/photo', [FotoController::class, 'index'])->name('foto');
 
+//foto
+Route::get('foto', [PhotoController::class, 'index'])->name('foto');
 Route::post('pages.foto', [FotoController::class, 'upload'])->name('pages.foto');
+
+//album
 Route::get('album', [AlbumController::class, 'hal'])->name('album');
 Route::get('createalbum', [AlbumController::class, 'index'])->name('createalbum');
 
+//komentar
+Route::post('foto', [KomentarController::class, 'store'])->name('komentar.store');
 
-Route::get('foto', [PhotoController::class, 'index'])->name('foto');
+//delete
+Route::delete('/foto/{id}', 'FotoController@destroy')->name('foto.delete');
 
 
 
 });
 
-// Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
 

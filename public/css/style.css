@@ -152,12 +152,13 @@ button .photo {
 }
 
 .modal-body img.foto-edit {
-  width: 300px; /* Atur lebar gambar sesuai kebutuhan */
-  height: auto; /* Memastikan gambar mempertahankan rasio aspeknya */
+  width: 200px; 
+  height: auto; 
 }
 
+
 .card {
-  width: 260px;
+  width: 300px;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -220,3 +221,9 @@ button .photo {
   height: auto;
   object-fit: cover;
 }
+
+.card.d-flex{
+  position: relative;
+  margin-right: 20px;
+}
+
