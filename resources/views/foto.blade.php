@@ -12,13 +12,13 @@
             @foreach ($foto as $item)
             <div class="card d-flex">
                 <img src="{{ asset('storage/foto/'.$item->lokasi_file)}}" style="width:300px; height:300px" alt="">
-                {{-- <i class="bi bi-trash" style="margin-left:90%; margin-top:10px"></i> --}}
-                <form action="#" method="POST">
+                <i class="bi bi-trash" style="margin-left:90%; margin-top:10px"></i>
+                <!-- <form action="#" method="POST">
                     {{-- <form action="{{ route('foto.destroy', $item->id) }}" method="POST"> --}}
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                </form>
+                </form> -->
                     <P>{{$item->judul_foto}}</P>
                     <P>{{$item->deskripsi_foto}}</P>
                     <P>{{$item->tanggal_unggah}}</P>
@@ -40,48 +40,29 @@
                 <div class="col-6">
                     <img src="{{ asset('storage/foto/'.$item->lokasi_file)}}" class="foto-edit">
                 </div>
-                {{-- <form action="" method="post">
-                    @csrf
+                <form action="{{ route('komentar.store') }}" method="post">
+                @csrf
                 <div class="col-md-5">
-                    <div class="card">
-                        <div class="chat-header">Comments</div>
-                        <div class="chat-window">
-                            <ul class="message-list"></ul>
-                        </div>
-                        <div class="chat-input">
-                            <input type="text" class="message-input" placeholder="Type your message here">
-                                @foreach ($komentar as $komentars)
-                                <li class="tag__name"><a  href="/profil">{{$komentars->user->username}}</a><br>{{$komentars->IsiKomentar}}</li><br>
-                                @endforeach
-                            <button type="submit" class="send-button">Send</button>
-                        </div>
-                    </div>
-                </div>
-                </form> --}}
-                {{-- <form action="{{ route('komentar.store') }}" method="post">
-                    @csrf --}}
-                    <div class="col-md-5">
-                        <div class="card">
-                            <div class="chat-header">Comments</div>
-                            <div class="chat-window">
-                                <ul class="message-list">
-                                    @foreach ($komentar as $komentars)
-                                        <li class="tag__name"><a href="/profil">{{ $komentars->user->username }}</a><br>{{ $komentars->IsiKomentar }}</li><br>
-                                    @endforeach
-                                </ul>
-                            </div>
-                            <div class="chat-input">
-                                <input type="text" class="message-input" name="new_comment" placeholder="Type your message here">
-                                <button type="submit" class="send-button">Send</button>
-                            </div>
-                        </div>
-                    </div>
-                {{-- </form> --}}
+                <div class="card">
+                <div class="chat-header">Comments</div>
+                <div class="chat-window">
+                <ul class="message-list">
+                    @foreach ($komentar as $komentars)
+                        <li class="">{{ $komentars->user->username }}<br>{{ $komentars->isi_komentar }}</li><br>
+                    @endforeach
+                </ul>
+            </div>
+            <div class="chat-input">
+                <input type="text" class="message-input" name="new_comment" placeholder="Type your message here">
+                <button type="submit" class="send-button">Send</button>
+            </div>
+        </div>
+    </div>
+</form>
             </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>

@@ -27,7 +27,7 @@ class KomentarController extends Controller
         $validated['tanggal_komentar'] = Date::now();
         $validated['user_id'] = auth()->user()->id;
 
-        Koment::create($validated);
+        Komentar::create($validated);
 
         return redirect()->route('foto');
     }

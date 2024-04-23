@@ -56,8 +56,7 @@ Route::get('createalbum', [AlbumController::class, 'index'])->name('createalbum'
 Route::post('foto', [KomentarController::class, 'store'])->name('komentar.store');
 
 //delete
-Route::delete('/foto/{id}', 'FotoController@destroy')->name('foto.delete');
-
+// Route::delete('/foto/{id}', 'FotoController@destroy')->name('foto.delete');
 
 
 });

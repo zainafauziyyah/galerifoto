@@ -27,12 +27,11 @@ class FotoController extends Controller
     
             $file->move(public_path('storage/foto'), $filename);
     
-            $foto = new Foto(); // Pastikan 'Foto' diawali dengan huruf kapital
+            $foto = new Foto();
             $foto->judul_foto = $request->judul_foto;
             $foto->deskripsi_foto = $request->deskripsi_foto;
             $foto->lokasi_file = $filename;
             $foto->tanggal_unggah = now();
-            // $foto->album_id = $album_id;
             $foto->user_id = 1;
             $foto->lokasi_file = $filename;
             $foto->save();
@@ -41,18 +40,5 @@ class FotoController extends Controller
             Session::flash('message', 'photo uploaded successfully');
             return redirect('foto');
         }
-    }
-
-    public function destroy($id)
-    {
-        // Temukan foto berdasarkan ID
-        $foto = Foto::findOrFail($id);
-
-        // Hapus foto dari database
-        $foto->delete();
-
-        return redirect()->back()->with('success', 'photo is deleted');
-    }
-
-    
+    }   
 }    

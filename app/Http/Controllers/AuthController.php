@@ -53,7 +53,6 @@ class AuthController extends Controller
         ]);
         $encryptedPassword = Hash::make($request->input('password'));
 
-    // Membuat pengguna baru dengan password terenkripsi
     $user = User::create([
         'username' => $request->input('username'),
         'email' => $request->input('email'),
