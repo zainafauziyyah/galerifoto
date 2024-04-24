@@ -2,6 +2,10 @@ Nama : Zaina Fauziyyah
 
 Kelas : XII PPL 2
 
+WEBSITE GALERI FOTO (GALERYOUS)
+
+This is a photo website that can capture precious moments or store photos of loved ones. Capture your moment here!
+
 1. Tools yang digunakan
    - xampp 8.2.12
    - visual studio code
@@ -56,7 +60,7 @@ untuk memasukan migration kembali ke dalam database, pastikan juga di env databa
 
 - klik php artisan serve
 
-- program siap ditampilkan
+- program akan siap ditampilkan
    
 3. UML/Usecase
    ![alt text](https://github.com/zainafauziyyah/galerifoto/blob/main/Screenshot%20(2).png?raw=true)
