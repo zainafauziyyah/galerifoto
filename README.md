@@ -32,46 +32,31 @@ Di website ini bisa di akses oleh 1 akun yang di wajibkan registrasi terlebih da
 - Installation Laravel via composer
 
 
-1. Untuk membuat project baru
-
-` composer create-project laravel/laravel nama-project `
+1. Untuk membuat project baru : ` composer create-project laravel/laravel nama-project `
 
 
-2. Untuk menjalankan 
-
-` php artisan serve `
+2. Untuk menjalankan : ` php artisan serve `
 
 <br>
 
 - Clone repository from Github
 
 
-1. Copy link github yang akan di clone
-
-` https://github.com/zainafauziyyah/galerifoto `
+1. Copy link github yang akan di clone : ` https://github.com/zainafauziyyah/galerifoto `
 
 
-2. Composer update di terminal
-
-` composer update `
+2. Composer update di terminal : ` composer update `
 
 
-3. Setting database di .env
-
-` DB_DATABASE=galeri_foto `
+3. Setting database di .env : ` DB_DATABASE=galeri_foto `
 
 
-4. Migrate database
-
-` php artisan migrate:fresh `
+4. Migrate database : ` php artisan migrate:fresh `
 
 
-5. Untuk menjalankan
-
-` php artisan serve `
+5. Untuk menjalankan : ` php artisan serve `
 
 <br>
-
 
 ## UML/Usecase
 
