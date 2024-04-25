@@ -67,3 +67,9 @@ untuk memasukan migration kembali ke dalam database, pastikan juga di env databa
 
 4. ERD
    ![alt text](https://github.com/zainafauziyyah/galerifoto/blob/main/public/Screenshot%20(1).png?raw=true)
+
+   5. Untuk menjalankan
+
+```php artisan serve
+
+
