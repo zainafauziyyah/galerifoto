@@ -41,7 +41,7 @@ Di website ini bisa di akses oleh 1 akun yang di wajibkan registrasi terlebih da
 
 ` php artisan serve `
 
-
+<br>
 
 - Clone repository from Github
 
@@ -88,8 +88,6 @@ Di website ini bisa di akses oleh 1 akun yang di wajibkan registrasi terlebih da
 
 
 Name : Zaina Fauziyyah
-
-<br>
 
 Class : XII PPL 2
 
