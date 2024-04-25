@@ -70,6 +70,6 @@ untuk memasukan migration kembali ke dalam database, pastikan juga di env databa
 
    5. Untuk menjalankan
 
-``` <span style="background-color: #FFFFFF;">Teks berwarna putih</span>
+` npm install `
 
 
